@@ -1,0 +1,264 @@
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    height: 400px;
+    width:300px;
+}
+   
+
+.main-content {
+    width: 300px;
+    height: 150px;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:none;
+
+   text-align: center;
+    border-radius: 0 0 14px 14px;
+   background-color: rgba(255, 255, 255, 0.626);
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+   overflow: hidden;
+   position: relative;
+ }
+
+.main-content h3,
+.main-content p {
+    margin: 0;
+}
+
+.main-content p {
+    margin-top: 4px;
+}
+
+body {
+    margin: 0;
+    background-image: url('background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding-top: 44px;
+}    
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 44px;
+    box-sizing: border-box;
+    padding: 0 16px;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    font-family: "Courier New", monospace;
+    color: #000000;
+}
+
+#datetime {
+    margin: 0;
+    font-size: 14px;
+}
+
+.titlebar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0 16px;
+    border-radius: 14px 14px 0 0;
+    background-color: rgba(200, 210, 220, 0.8);
+    cursor: grab;
+}
+#desktopApps {
+    text-align: center;
+    padding: 13px;
+    filter:drop-shadow( 0 0 8px rgba(0, 0, 0, 0.405));
+    width: fit-content;
+    padding-top: 64px;
+    font-family: "Courier New",monospace;
+    align-content:center;
+    position: relative;
+}
+#desktopApps img{
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    
+}
+.selected {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+#onenoteswindow {
+    display: none;
+}
+
+
+.window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.626);
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.6);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.window-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 44px;
+    padding: 0 16px;
+    background-color: rgba(200, 210, 220, 0.8);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    flex-shrink: 0;
+    gap: 12px;
+}
+
+.window-header .headertext {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    flex: 0 1 auto;
+    text-align: left;
+    max-width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.closebutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.closebutton button {
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(246, 49, 49, 0.3);
+    color: #ff4545;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.closebutton button:hover {
+    background-color: rgba(246, 49, 49, 0.6);
+}
+
+.closebutton button:active {
+    background-color: rgba(246, 49, 49, 0.8);
+}
+
+.window-content {
+    flex: 1;
+    display: flex;
+    padding: 16px;
+    overflow-y: auto;
+   
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+#onenoteswindow {
+    display: none;
+}
+
+#onenoteswindow.active {
+    display: flex ;
+}
+
+.app-icon {
+    cursor: grab;
+    user-select: none;
+    transition: transform 0.2s ease;
+}
+
+.app-icon:active {
+    cursor: grabbing;
+}
+#sidebar {
+    width: 140px;
+    margin-right: 16px;
+    overflow-y: auto;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    background-color:#e3e8f0aa;
+    border-radius: 15px;
+    
+    font-family:Andale Mono, monospace;
+    
+    padding: 8px;
+}
+#sidebar div:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+#siderbar div {
+    padding: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+}
+#notesContent {
+    flex: 1;
+    padding: 8px;
+    overflow-y: auto;
+    font-family:"Courier New", monospace;
+}
+#terminalInput {
+    flex: 1;
+    padding: 8px;
+    color: #15ea4aac;
+    font-family:"Courier New", monospace;
+    background-color:#1f222ca5;
+    font-family:"Courier New", monospace;
+    border-radius: 20px;
+    border: none;
+    
+}
+#terminalOutput {
+    flex: 1;
+    padding: 8px;
+    font-family: "Andale Mono", monospace;
+    
+    
+    overflow-y: auto;
+}
+    

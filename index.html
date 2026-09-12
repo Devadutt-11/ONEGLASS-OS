@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ONEGLASS OS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="bootSound" src="boot.mp3"></audio>
+    <audio id="openapp" src="appopenig.mp3"></audio>
+
+    <div id="container" class="container">
+        <div id="containerheader" class="titlebar">
+           
+          <p id="handle" class="handle"></p> 
+          <div class="closebutton">
+           <button id="containerclose">X</button>
+         </div>
+        </div>
+        <div class="main-content">
+           <h3 style="font-family: 'Andale Mono', monospace;">Welcome to ONEGLASS OS</h3>
+           <p style="font-family: 'Courier New', monospace;">
+             This is a simple operating system interface.
+           </p>
+        </div>
+    </div>    
+    <br>
+    <div class="topbar">
+        <p id="datetime" 
+        style="margin-right: 10px">
+            21/6/2026 3:45 PM
+        </p>
+        <p style="margin-left: 10px;cursor:pointer" id="containeropen" font-family=" 'Andale Mono', monospace;">ONEGLASS OS</p>
+    </div>
+    <div id="desktopApps">
+        
+            <div class="app-icon" id="onenotesicon" >
+           
+             <img src="one note.png">
+             <p>One Notes</p>
+           </div>
+           <div class="app-icon" id="terminalicon">
+             <img src="terminal.png">
+             <p>OneTerminal</p>
+           </div>
+  </div>
+    
+        <div class="window" id="onenoteswindow">
+            <div class="window-header" id="onenoteswindowheader">
+               <p class="headertext">MY NOTES</p>
+               <div class="closebutton">
+                 <button id="onenotesclose">X</button>
+               </div>
+            </div>
+            <div class="window-content" >
+                <div id="sidebar"></div>
+                <div id="notesContent">
+                    <p>Here are your notes.</p>
+                </div>
+            </div>
+        </div>     
+            <div class="window" id="terminalwindow">
+                <div class="window-header" id="terminalwindowheader">
+                   <p class="headertext">OneTerminal</p>
+                     <div class="closebutton">
+                        <button id="terminalclose">X</button>
+                     </div>
+                </div>
+                <div class="window-content" id="terminalContent">
+                    <div id="terminalOutput">
+                      <p>Welcome to OneTerminal. Type your commands below:</p>
+                   </div>
+                    <input type="text" id="terminalInput" placeholder="Enter command...">      
+                </div>
+            </div>     
+
+        
+    
+   
+
+    
+    <script src="script.js"></script>
+</body> 
+</html>
